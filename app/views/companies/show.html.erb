@@ -6,6 +6,9 @@
     </div>
     <div class="col text-right">
       <%= link_to "Edit", edit_company_path %>
+      <%= link_to company_path(@company), method: :delete, data: { confirm: "Are you sure, you want to delete #{@company.name} ?" }, class: "text-danger ml-2", title: "Delete" do %>
+        Delete
+      <% end %>
     </div>
   </div>
   <div class="bg-success">

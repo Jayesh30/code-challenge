@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :set_company, except: [:index, :create, :new]
+  rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
 
   def index
     @companies = Company.all
@@ -30,7 +31,17 @@ class CompaniesController < ApplicationController
     else
       render :edit
     end
-  end  
+  end
+
+  def destroy
+    name = @company.name
+    if @company.destroy
+      redirect_to companies_path, notice: "#{name} Successfully deleted"
+    else
+      Rails.logger.error "Error while deleting company: #{@company.id}, errors: #{@company.errors.full_messages}"
+      redirect_to company_path(@company), alert: "Something went wrong. Please try again later OR Contact tech support"
+    end
+  end
 
   private
 
@@ -49,6 +60,10 @@ class CompaniesController < ApplicationController
 
   def set_company
     @company = Company.find(params[:id])
+  end
+
+  def handle_record_not_found
+    redirect_to companies_path, alert: "Company Not Found"
   end
   
 end
