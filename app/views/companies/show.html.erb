@@ -1,3 +1,4 @@
+<% present @company do |company_presenter| %>
 <div class="container py-5">
   <h3>Company</h3>
   <div class="row">
@@ -14,8 +15,7 @@
   <div class="bg-success">
     <div class="container p-5 text-white">
       <h1><%= @company.name %></h1>
-      <h3><mark>City, State</mark></h3>
-      <pre><mark>☝️ This is what needs to be udpated. Examples: Atlanta, GA or Nashvile, TN</mark></pre>
+      <h3><mark><%= company_presenter.present_city_state %></mark></h3>
     </div>
   </div>
 
@@ -25,7 +25,7 @@
     </div>
     <div class="col-12 col-lg-4 pt-lg-5">
       <h4>Services</h4>
-      <% @company.services.reject(&:blank?).each do |service| %>
+      <% company_presenter.services.each do |service| %>
         <p><%= service %></p>
       <% end %>
       <h4>Contact</h4>
@@ -43,3 +43,4 @@
     <p class="lead"><%= @company.phone %> — <%= @company.email %></p>
   </div>
 </div>
+<%end %>
