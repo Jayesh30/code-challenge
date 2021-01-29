@@ -11,6 +11,14 @@ module CodeChallenge
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
+    Config.setup do |config|
+      config.const_name = "Settings"
+    end
+    Settings.reload_from_files(
+        Rails.root.join("config", "settings.yml").to_s,
+        Rails.root.join("config", "settings", "#{Rails.env}.yml").to_s,
+        Rails.root.join("config", "environments", "#{Rails.env}.yml").to_s
+    )
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <%= yield :form_errors %>
     <%= render 'shared/notices' %>
     <%= yield %>
     <div class="fixed-bottom bg-light">
