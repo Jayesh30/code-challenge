@@ -55,7 +55,7 @@
       </div>
       <div class="col-lg offset-lg-1">
         <div class="form-group">
-          <%= f.text_field :email, class: "form-control", placeholder: "hello@company.com", data: { emailDomain: "#{Settings.email_domain}", action: 'blur->emailfield#validate' }%>
+          <%= f.text_field :email, class: "form-control", placeholder: "hello@#{Settings.email_domain}", data: { emailDomain: "#{Settings.email_domain}", action: 'blur->emailfield#validate' }%>
           <div class='error text-danger' data-target='emailfield.error' style='display:none;'></div>
         </div>
       </div>
@@ -71,6 +71,19 @@
           </div>
       </div>
     </div>
+
+    <%= f.fields_for :style_layout do |sf| %>
+      <div class="row my-lg-3">
+        <div class="col-lg-3">
+          <label><strong>Color</strong><br><small class="text-muted">rendered in Company's Detail page</small></label>
+        </div>
+        <div class="col-lg offset-lg-1">
+          <div class="form-group">
+            <%= sf.color_field :brand_colour, value: @company.brand_colour, class: "color-input"%>
+          </div>
+        </div>
+      </div>
+    <% end %>
 
     <div class="row my-lg-3">
       <div class="col">

@@ -8,6 +8,7 @@ class CompaniesController < ApplicationController
 
   def new
     @company = Company.new
+    @company.style_layout = StyleLayout.new
   end
 
   def show
@@ -16,7 +17,7 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(company_params)
     if @company.save
-      redirect_to companies_path, notice: "Saved"
+      redirect_to companies_path, notice: "#{@company.name} Created Successfully"
     else
       render :new
     end
@@ -54,6 +55,7 @@ class CompaniesController < ApplicationController
       :phone,
       :email,
       :owner_id,
+      style_layout_attributes: [:brand_colour],
       services: []
     )
   end

@@ -10,6 +10,10 @@ class CompanyPresenter
     end
   end
 
+  def brand_colour
+    @company.brand_colour || Settings.default_brand_colour
+  end
+
   def services
     @company.services.reject(&:blank?)
   end
