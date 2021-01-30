@@ -1,6 +1,6 @@
 hometown_painting:
   name: Hometown Painting
-  email: "hometown_painting@hometown_painting.com"
+  email: "hometown_painting@test.com"
   zip_code: "93003"
   phone: "555-808-8888"
   services: "{Interior Painting, Commercial Painting}"
@@ -14,28 +14,28 @@ wolf_painting:
 
 thompson_patining:
   name: "Thompson Family Painting"
-  email: "thompson_patining@thompson_patining.com"
+  email: "thompson_patining@test.com"
   zip_code: "37201"
   phone: "555-808-8888"
   services: "{Interior Painting, Exterior Painting}"  
 
 armstrong_painting:
   name: "Armstrong Painting"
-  email: "armstrong_painting@armstrong_painting.com"
+  email: "armstrong_painting@test.com"
   zip_code:
   phone: "555-808-8888"
   services: "{Interior Painting, Commercial Painting, Exterior Painting}"  
 
 marcus_painting:
   name: "Marcus Paint"
-  email: "marcus_painting@marcus_painting.com"
+  email: "marcus_painting@test.com"
   zip_code:
   phone: "555-808-8888"
   services: "{Exterior Painting}"  
 
 brown_painting:
   name: "Brown Residential Painting"
-  email: "brown_painting@brown_painting.com"
+  email: "brown_painting@test.com"
   zip_code:
   phone: "555-808-8888"
   services: "{Interior Painting}"   

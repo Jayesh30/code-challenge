@@ -49,14 +49,14 @@
       </div>
     </div>
 
-    <div class="row my-lg-3" data-controller='emailfield'>
+    <div class="row my-lg-3">
       <div class="col-lg-3">
         <label><strong>Email</strong><br><small class="text-muted">Shown in marketing</small></label>
       </div>
       <div class="col-lg offset-lg-1">
         <div class="form-group">
-          <%= f.text_field :email, class: "form-control", placeholder: "hello@#{Settings.email_domain}", data: { emailDomain: "#{Settings.email_domain}", action: 'blur->emailfield#validate' }%>
-          <div class='error text-danger' data-target='emailfield.error' style='display:none;'></div>
+          <%= f.text_field :email, class: "form-control", placeholder: "hello@#{Settings.email_domain}", data: { emailDomain: "#{Settings.email_domain}", action: 'blur->formvalidation#validateEmail' }%>
+          <div class='error text-danger' data-target='formvalidation.error' style='display: none;'></div>
         </div>
       </div>
     </div>

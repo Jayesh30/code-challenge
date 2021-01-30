@@ -72,7 +72,20 @@ _Assessing: Ability to produce clean tests and documentation for code._
 
 ### **☐ Suggest a new task for this challenge**
 
-Write up a proposed challenge to add to this repository for assessing developers. Do not solve the code challenge. Just write the task, and why this would make a good challenge to include for future developers.
+  - Add Search & filter On Company Index Page 
+    When companies are more then Search & filer functionality will helpful
+    Search based on name - typeahead searched
+    Filter based on zip-codes(list only those companies whcih are on searched zip code).
+    Filter based on Service type(list only those companies whcih are on searched zip code).
+    This will cover backend, frontend & api knowledge.
+
+
+  - Add API route to access companies
+    This will allow candidates to show that they can design an basic API and write good test cases covering the APIs.
+
+  - Add Pagination 
+
+  - Add Multi-Local(I18n)
 
 _Assessing: Engineering instinct, writing, ability to document up a deliverable concisely._
 

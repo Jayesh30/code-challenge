@@ -3,7 +3,7 @@ class CompanyPresenter
     @company = company
   end
   def present_city_state
-    if @company.state && @company.city
+    if @company.state.present? && @company.city.present?
       "#{@company.city}, #{@company.state}"
     else
       "City, State"

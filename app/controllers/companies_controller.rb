@@ -19,18 +19,21 @@ class CompaniesController < ApplicationController
     if @company.save
       redirect_to companies_path, notice: "#{@company.name} Created Successfully"
     else
-      render :new
+      Rails.logger.error "Error while creating company:  errors: #{@company.errors.full_messages}"
+      render :new, alert: "Failed to create company"
     end
   end
 
   def edit
+    @company.style_layout ||= StyleLayout.new
   end
 
   def update
     if @company.update(company_params)
       redirect_to companies_path, notice: "Changes Saved"
     else
-      render :edit
+      Rails.logger.error "Error while update company:  #{@company.id}, errors: #{@company.errors.full_messages}"
+      render :edit, alert: "Failed to update company"
     end
   end
 

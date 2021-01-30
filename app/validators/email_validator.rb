@@ -3,7 +3,6 @@ class EmailValidator < ActiveModel::Validator
   EMAIL_DOMAIN = Settings.email_domain
 
   def validate(record)
-    Rails.logger.info " #{record.inspect}"
     if record.email.present?
       email = record.email.downcase
       record.errors.add :email, " is not in valid format" unless VALID_EMAIL_REGEX =~ email
